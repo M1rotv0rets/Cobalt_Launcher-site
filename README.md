@@ -199,24 +199,24 @@
 
         <div class="input_box">
             <input type="text" id="user" class="input-field" required>
-            <label for="user" class="label">Username</label>
+            <label for="user" class="label">Имя пользователя</label>
             <i class="bx bx-user icon"></i>
         </div>
 
         <div class="input_box">
             <input type="password" id="pass" class="input-field" required>
-            <label for="pass" class="label">Password</label>
+            <label for="pass" class="label">Авторизация</label>
             <i class="bx bx-lock-alt icon"></i>
         </div>
 
         <div class="remember-forgot">
             <div class="remember-me">
                 <input type="checkbox" id="remember">
-                <label for="remember">Remember me</label>
+                <label for="remember">Запомнить меня</label>
             </div>
 
             <div class="forgot">
-                <a href="#">Forgot password?</a>
+                <a href="#">Забыл пароль?</a>
             </div>
         </div>
 
@@ -225,7 +225,7 @@
         </div>
 
         <div class="register">
-            <span>Don’t have an account? <a href="#" onclick="showRegister()">Register</a></span>
+            <span>У тебя нету аккаунта? <a href="#" onclick="showRegister()">Тогда зарегестрируйся!</a></span>
         </div>
     </div>
 
@@ -237,7 +237,7 @@
 
         <div class="input_box">
             <input type="text" id="reg-user" class="input-field" required>
-            <label for="reg-user" class="label">Username</label>
+            <label for="reg-user" class="label">Имя пользователя</label>
             <i class="bx bx-user icon"></i>
         </div>
 
@@ -249,7 +249,7 @@
 
         <div class="input_box">
             <input type="password" id="reg-pass" class="input-field" required>
-            <label for="reg-pass" class="label">Password</label>
+            <label for="reg-pass" class="label">Пароль</label>
             <i class="bx bx-lock-alt icon"></i>
         </div>
 
@@ -258,7 +258,7 @@
         </div>
 
         <div class="login">
-            <span>Already have an account? <a href="#" onclick="showLogin()">Login</a></span>
+            <span>У вас уже есть аккаунт? <a href="#" onclick="showLogin()">Тогда Авторизуйся!</a></span>
         </div>
     </div>
 
