@@ -13,7 +13,15 @@
             <button onclick="showPage('home')">Главная</button>
             <button onclick="showPage('accounts')">Аккаунты</button>
             <button onclick="showPage('about')">О проекте</button>
-            <button onclick="toggleTheme()">🌙 / ☀️</button>
+
+            <div class="dropdown">
+                <button class="dropbtn">⚙️ Настройки</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="toggleTheme()">Сменить тему</a>
+                    <a href="#" onclick="alert('Пока не реализовано')">Сменить язык</a>
+                </div>
+            </div>
+
             <a href="login.html" target="_blank">
                 <button>Вход / Регистрация</button>
             </a>
