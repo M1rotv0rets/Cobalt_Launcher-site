@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobalt Launcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cobalt Launcher</h1>
+        <nav>
+            <button onclick="showPage('home')">Главная</button>
+            <button onclick="showPage('accounts')">Аккауты</button>
+            <button onclick="showPage('about')">О проекте</button>
+            <button onclick="toggleTheme()">🌙 / ☀️</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <h2>Добро пожаловать на сайт Cobalt Launcher!</h2>
+            <p>Это главная страница.</p>
+        </section>
+
+        <section id="accounts" class="page">
+            <h2>Аккаунты</h2>
+            <p>Тут чета будет</p>
+        </section>
+
+        <section id="about" class="page">
+            <h2>О проекте</h2>
+            <p>Это сайт Cobalt Launсher сделаный с любовью💙</p>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
