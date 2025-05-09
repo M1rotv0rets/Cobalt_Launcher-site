@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    transition: all 0.3s;
+}
+
+header {
+    background-color: #0078d7;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #005fa3;
+    color: white;
+}
+
+main {
+    padding: 2rem;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Темна тема */
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark header {
+    background-color: #1f1f1f;
+}
+
+body.dark nav button {
+    background-color: #333;
+}
