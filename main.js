@@ -8,7 +8,12 @@ function toggleTheme() {
     document.body.classList.toggle('dark');
 }
 
-// Автоматично виставляти темну тему, якщо у користувача така система
+function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    nav.classList.toggle('show');
+}
+
+// Автотема
 window.addEventListener('DOMContentLoaded', () => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
