@@ -1,149 +1,49 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobalt Launcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cobalt Launcher</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+        <nav id="main-nav">
+            <a onclick="showPage('home')">Главная</a>
+            <a onclick="showPage('accounts')">Аккаунты</a>
+            <a onclick="showPage('about')">О проекте</a>
+            <a href="login.html" target="_blank">Вход / Регистрация</a>
+            <div class="dropdown">
+                <a class="dropbtn">⚙️ Настройки</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="toggleTheme()">Сменить тему</a>
+                    <a href="#" onclick="alert('Смена языка в разработке')">Сменить язык</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    transition: background-color 0.3s, color 0.3s;
-}
+    <main>
+        <section id="home" class="page active">
+            <h2>Добро пожаловать в Cobalt Launcher!</h2>
+            <p>Это главная страница.</p>
+        </section>
 
-header {
-    background-color: #0078d7;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
+        <section id="accounts" class="page">
+            <h2>Страница аккаунтов</h2>
+            <p>Здесь в будущем будет управление аккаунтами.</p>
+        </section>
 
-h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
+        <section id="about" class="page">
+            <h2>О проекте</h2>
+            <p>Это сайт лаунчера Cobalt, созданный с любовью 💙</p>
+        </section>
+    </main>
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-nav a, .dropbtn {
-    background-color: #005fa3;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    cursor: pointer;
-}
-
-nav a:hover, .dropbtn:hover {
-    background-color: #004080;
-}
-
-main {
-    padding: 2rem;
-}
-
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-body.dark {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark header {
-    background-color: #1f1f1f;
-}
-
-body.dark nav a,
-body.dark .dropbtn {
-    background-color: #333;
-}
-
-body.dark nav a:hover,
-body.dark .dropbtn:hover {
-    background-color: #222;
-}
-
-/* Гамбургер */
-.hamburger {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-/* Налаштування (dropdown) */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    color: black;
-    min-width: 160px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background-color: #f0f0f0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* 📱 Мобільна версія */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    nav.show {
-        display: flex;
-    }
-
-    nav a, .dropbtn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-    }
-}
+    <script src="main.js"></script>
+</body>
+</html>
