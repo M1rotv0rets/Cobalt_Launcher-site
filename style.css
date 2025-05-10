@@ -1,124 +1,129 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    transition: all 0.3s;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  transition: all 0.3s;
 }
 
-/* HEADER */
 header {
-    background-color: #1f1f1f;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: #1f1f1f;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* HAMBURGER */
 .hamburger {
-    font-size: 1.8rem;
-    cursor: pointer;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
-/* SIDEBAR */
 #sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    height: 100%;
-    width: 250px;
-    background-color: #222;
-    padding: 2rem 1rem;
-    transition: left 0.3s ease;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: #222;
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  z-index: 999;
 }
 
 #sidebar.show {
-    left: 0;
+  left: 0;
 }
 
 #sidebar nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 #sidebar nav a {
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 0;
-    transition: background 0.2s;
-    cursor: pointer;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 0;
+  transition: background 0.2s;
+  cursor: pointer;
 }
 
 #sidebar nav a:hover {
-    background-color: #444;
-}
-
-#sidebar hr {
-    margin: 1rem 0;
-    border: none;
-    height: 1px;
-    background-color: #555;
-}
-
-.lang-options {
-    margin-top: 0.5rem;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.hidden {
-    display: none !important;
+  background-color: #444;
 }
 
 main {
-    margin-left: 0;
-    padding: 2rem;
-    transition: margin-left 0.3s ease;
+  margin-left: 0;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
 }
 
 body.sidebar-open main {
-    margin-left: 250px;
+  margin-left: 250px;
 }
 
 .page {
-    display: none;
+  display: none;
 }
 
 .page.active {
-    display: block;
+  display: block;
 }
 
 /* LIGHT THEME */
 body:not(.dark) {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 body:not(.dark) header,
 body:not(.dark) #sidebar {
-    background-color: #0078d7;
+  background-color: #0078d7;
 }
 
 body:not(.dark) #sidebar nav a {
-    background-color: #005fa3;
-    color: white;
+  background-color: #005fa3;
+  color: white;
 }
 
 body:not(.dark) #sidebar nav a:hover {
-    background-color: #004080;
+  background-color: #004080;
+}
+
+/* Мова */
+.lang-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lang-options button {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lang-options button:hover {
+  background-color: #555;
+}
+
+/* Адаптація */
+@media (max-width: 768px) {
+  body.sidebar-open main {
+    margin-left: 0;
+  }
 }

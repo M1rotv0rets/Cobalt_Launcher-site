@@ -51,3 +51,62 @@
     <script src="main.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cobalt Launcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="title">Cobalt Launcher</h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <aside id="sidebar">
+    <nav>
+      <a onclick="showPage('home')"><span data-lang="nav_home">Главная</span></a>
+      <a onclick="showPage('accounts')"><span data-lang="nav_accounts">Аккаунты</span></a>
+      <a onclick="showPage('about')"><span data-lang="nav_about">О проекте</span></a>
+      <a onclick="showPage('settings')"><span data-lang="nav_settings">Настройки</span></a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="home" class="page active">
+      <h2 data-lang="home_title">Добро пожаловать в Cobalt Launcher!</h2>
+      <p data-lang="home_text">Это главная страница.</p>
+    </section>
+
+    <section id="accounts" class="page">
+      <h2 data-lang="accounts_title">Страница аккаунтов</h2>
+      <p data-lang="accounts_text">Здесь в будущем будет управление аккаунтами.</p>
+    </section>
+
+    <section id="about" class="page">
+      <h2 data-lang="about_title">О проекте</h2>
+      <p data-lang="about_text">Это сайт лаунчера Cobalt, созданный с любовью 💙</p>
+    </section>
+
+    <section id="settings" class="page">
+      <h2 data-lang="nav_settings">⚙️ Настройки</h2>
+      <div style="margin-bottom: 2rem;">
+        <h3 data-lang="nav_theme">Тема</h3>
+        <button onclick="toggleTheme()">Сменить тему</button>
+      </div>
+      <div>
+        <h3 data-lang="nav_lang">Язык интерфейса</h3>
+        <div class="lang-options">
+          <button onclick="setLanguage('ru')">🇷🇺 Русский</button>
+          <button onclick="setLanguage('uk')">🇺🇦 Українська</button>
+          <button onclick="setLanguage('en')">🇬🇧 English</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
