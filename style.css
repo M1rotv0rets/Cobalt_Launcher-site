@@ -5,52 +5,94 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #121212;
+    color: #ffffff;
+    transition: all 0.3s;
 }
 
+/* HEADER */
 header {
-    background-color: #0078d7;
+    background-color: #1f1f1f;
     color: white;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 
-h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-nav a, .dropbtn {
-    background-color: #005fa3;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+/* HAMBURGER */
+.hamburger {
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
-nav a:hover, .dropbtn:hover {
-    background-color: #004080;
+/* SIDEBAR */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #222;
+    padding: 2rem 1rem;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+#sidebar.show {
+    left: 0;
+}
+
+#sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#sidebar nav a {
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 0;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+#sidebar nav a:hover {
+    background-color: #444;
+}
+
+#sidebar hr {
+    margin: 1rem 0;
+    border: none;
+    height: 1px;
+    background-color: #555;
+}
+
+.lang-options {
+    margin-top: 0.5rem;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hidden {
+    display: none !important;
 }
 
 main {
+    margin-left: 0;
     padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+
+body.sidebar-open main {
+    margin-left: 250px;
 }
 
 .page {
@@ -61,89 +103,22 @@ main {
     display: block;
 }
 
-body.dark {
-    background-color: #121212;
-    color: #ffffff;
+/* LIGHT THEME */
+body:not(.dark) {
+    background-color: #ffffff;
+    color: #000000;
 }
 
-body.dark header {
-    background-color: #1f1f1f;
+body:not(.dark) header,
+body:not(.dark) #sidebar {
+    background-color: #0078d7;
 }
 
-body.dark nav a,
-body.dark .dropbtn {
-    background-color: #333;
+body:not(.dark) #sidebar nav a {
+    background-color: #005fa3;
+    color: white;
 }
 
-body.dark nav a:hover,
-body.dark .dropbtn:hover {
-    background-color: #222;
-}
-
-/* Гамбургер */
-.hamburger {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-/* Налаштування (dropdown) */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    color: black;
-    min-width: 160px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background-color: #f0f0f0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* 📱 Мобільна версія */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    nav.show {
-        display: flex;
-    }
-
-    nav a, .dropbtn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-    }
+body:not(.dark) #sidebar nav a:hover {
+    background-color: #004080;
 }
