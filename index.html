@@ -8,39 +8,43 @@
 </head>
 <body>
     <header>
-        <h1>Cobalt Launcher</h1>
-        <div class="hamburger" onclick="toggleMenu()">
-            ☰
-        </div>
-        <nav id="main-nav">
-            <a onclick="showPage('home')">Главная</a>
-            <a onclick="showPage('accounts')">Аккаунты</a>
-            <a onclick="showPage('about')">О проекте</a>
-            <a href="login.html" target="_blank">Вход / Регистрация</a>
-            <div class="dropdown">
-                <a class="dropbtn">⚙️ Настройки</a>
-                <div class="dropdown-content">
-                    <a href="#" onclick="toggleTheme()">Сменить тему</a>
-                    <a href="#" onclick="alert('Смена языка в разработке')">Сменить язык</a>
-                </div>
+        <h1 id="title">Cobalt Launcher</h1>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <aside id="sidebar">
+        <nav>
+            <a onclick="showPage('home')"><span data-lang="nav_home">Главная</span></a>
+            <a onclick="showPage('accounts')"><span data-lang="nav_accounts">Аккаунты</span></a>
+            <a onclick="showPage('about')"><span data-lang="nav_about">О проекте</span></a>
+            <a href="login.html" target="_blank"><span data-lang="nav_login">Вход / Регистрация</span></a>
+            <hr>
+            <a onclick="toggleTheme()"><span data-lang="nav_theme">Сменить тему</span></a>
+            <a onclick="toggleLanguageMenu()">
+                <span data-lang="nav_lang">Сменить язык</span> <span id="language-flag">🇷🇺</span>
+            </a>
+            <div id="language-menu" class="lang-options hidden">
+                <a onclick="setLanguage('ru')">🇷🇺 Русский</a>
+                <a onclick="setLanguage('uk')">🇺🇦 Українська</a>
+                <a onclick="setLanguage('en')">🇬🇧 English</a>
             </div>
         </nav>
-    </header>
+    </aside>
 
     <main>
         <section id="home" class="page active">
-            <h2>Добро пожаловать в Cobalt Launcher!</h2>
-            <p>Это главная страница.</p>
+            <h2 data-lang="home_title">Добро пожаловать в Cobalt Launcher!</h2>
+            <p data-lang="home_text">Это главная страница.</p>
         </section>
 
         <section id="accounts" class="page">
-            <h2>Страница аккаунтов</h2>
-            <p>Здесь в будущем будет управление аккаунтами.</p>
+            <h2 data-lang="accounts_title">Страница аккаунтов</h2>
+            <p data-lang="accounts_text">Здесь в будущем будет управление аккаунтами.</p>
         </section>
 
         <section id="about" class="page">
-            <h2>О проекте</h2>
-            <p>Это сайт лаунчера Cobalt, созданный с любовью 💙</p>
+            <h2 data-lang="about_title">О проекте</h2>
+            <p data-lang="about_text">Это сайт лаунчера Cobalt, созданный с любовью 💙</p>
         </section>
     </main>
 
