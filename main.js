@@ -3,10 +3,8 @@ function showPage(pageId) {
   pages.forEach(p => p.classList.remove('active'));
   document.getElementById(pageId).classList.add('active');
 
-  // Закриваємо меню на мобілках
   const sidebar = document.getElementById('sidebar');
   sidebar.classList.remove('show');
-  document.body.classList.remove('sidebar-open');
 }
 
 function toggleTheme() {
@@ -17,7 +15,6 @@ function toggleTheme() {
 function toggleMenu() {
   const sidebar = document.getElementById('sidebar');
   const isOpen = sidebar.classList.toggle('show');
-  document.body.classList.toggle('sidebar-open', isOpen);
 }
 
 function setLanguage(lang) {
@@ -82,7 +79,6 @@ function updateLanguage(lang) {
   });
 }
 
-// Ініціалізація після завантаження сторінки
 window.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (!savedTheme || savedTheme === 'dark') {
